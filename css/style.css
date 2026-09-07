@@ -114,6 +114,7 @@ body {
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img, svg, video { display: block; max-width: 100%; }
@@ -475,11 +476,13 @@ strong { color: var(--ink); font-weight: 700; }
 .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
 .split.reverse { grid-template-columns: 0.9fr 1.1fr; }
 .split.reverse .split-visual { order: -1; }
-.split-visual { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; }
+.split-visual { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
 .visual-blob-video {
   position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
   width: 340px;
+  max-width: 100%;
   aspect-ratio: 0.8;
   overflow: hidden;
   mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 45%, transparent 78%);
@@ -494,7 +497,9 @@ strong { color: var(--ink); font-weight: 700; }
 
 .creamos-glass-video {
   position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
   width: 560px;
+  max-width: 100%;
   aspect-ratio: 1.333;
   overflow: hidden;
   mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 45%, transparent 78%);
@@ -525,7 +530,9 @@ strong { color: var(--ink); font-weight: 700; }
 
 .contacto-glass-video {
   position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
   width: 420px;
+  max-width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
   mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 45%, transparent 78%);
@@ -586,9 +593,12 @@ strong { color: var(--ink); font-weight: 700; }
   width: 100%; height: 100%; border-radius: 50%;
   background: linear-gradient(135deg, rgba(200,57,37,0.22), rgba(90,60,153,0.22));
 }
+#mision-valor { grid-template-columns: 1fr 1fr; }
+
 @media (max-width: 720px) {
   .mv-card { flex-direction: column; text-align: center; }
   .mv-card-video { width: 110px; }
+  #mision-valor { grid-template-columns: 1fr; }
 }
 
 /* ---------- pillar cards ---------- */
