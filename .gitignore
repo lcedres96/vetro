@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Videos servidos desde Cloudinary (res.cloudinary.com/tjba2dzw)
+assets/video/
