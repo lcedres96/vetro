@@ -562,7 +562,8 @@ strong { color: var(--ink); font-weight: 700; }
 }
 
 #cristallino { padding-bottom: 40px; }
-#galeria { padding-top: 40px; }
+/* fondo negro puro para que no se note el recuadro del video del cristal */
+#galeria { padding-top: 40px; background: #000; }
 #galeria .pillars-grid { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 720px) { #galeria .pillars-grid { grid-template-columns: 1fr; } }
 #creamos { padding: 60px 0; }
