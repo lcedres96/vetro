@@ -546,6 +546,19 @@ strong { color: var(--ink); font-weight: 700; }
   display: block;
 }
 
+/* En mobile los videos se ajustan a la altura del contenedor para no quedar cortados */
+@media (max-width: 720px) {
+  .visual-blob-video,
+  .creamos-glass-video,
+  .cristallino-gem-video,
+  .contacto-glass-video {
+    width: auto;
+    height: 88%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
 #cristallino { padding-bottom: 40px; }
 #galeria { padding-top: 40px; }
 #galeria .pillars-grid { grid-template-columns: repeat(3, 1fr); }
