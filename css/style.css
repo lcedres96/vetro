@@ -477,6 +477,8 @@ strong { color: var(--ink); font-weight: 700; }
 .split.reverse { grid-template-columns: 0.9fr 1.1fr; }
 .split.reverse .split-visual { order: -1; }
 .split-visual { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; min-width: 0; }
+/* el cristal tiene glow (drop-shadow) que no debe recortarse */
+#dialogo-profundo .split-visual { overflow: visible; }
 
 .visual-blob-video {
   position: absolute;
