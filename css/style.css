@@ -907,7 +907,15 @@ strong { color: var(--ink); font-weight: 700; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .category-nav { position: static; }
+  .category-nav {
+    position: static;
+    margin-left: 28px;
+    margin-right: 28px;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    justify-content: center;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 560px) {
