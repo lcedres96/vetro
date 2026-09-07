@@ -476,7 +476,7 @@ strong { color: var(--ink); font-weight: 700; }
 .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
 .split.reverse { grid-template-columns: 0.9fr 1.1fr; }
 .split.reverse .split-visual { order: -1; }
-.split-visual { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.split-visual { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; min-width: 0; }
 
 .visual-blob-video {
   position: absolute;
@@ -516,6 +516,7 @@ strong { color: var(--ink); font-weight: 700; }
 .cristallino-gem-video {
   position: relative;
   width: 240px;
+  max-width: 100%;
   aspect-ratio: 0.5625;
   overflow: hidden;
   mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 45%, transparent 78%);
@@ -547,6 +548,8 @@ strong { color: var(--ink); font-weight: 700; }
 
 #cristallino { padding-bottom: 40px; }
 #galeria { padding-top: 40px; }
+#galeria .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 720px) { #galeria .pillars-grid { grid-template-columns: 1fr; } }
 #creamos { padding: 60px 0; }
 
 .crystal {
