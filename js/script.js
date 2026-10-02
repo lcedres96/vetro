@@ -206,4 +206,17 @@
         });
     });
   }
+
+  // ---- cards: cursor-following color aura, clipped inside each card ----
+  document.querySelectorAll(".glass-card, .pillar-card, .module-card, .case-card, .contact-info-card, .hero-glass-panel").forEach(function (card) {
+    card.addEventListener("mousemove", function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var hue = (x / rect.width) * 360;
+      card.style.setProperty("--mx", x + "px");
+      card.style.setProperty("--my", y + "px");
+      card.style.setProperty("--hue", hue.toFixed(0));
+    });
+  });
 })();

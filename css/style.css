@@ -979,3 +979,48 @@ strong { color: var(--ink); font-weight: 700; }
 @media (max-width: 560px) {
   .whatsapp-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
 }
+
+
+/* ---------- cursor aura: color glow that follows the mouse, clipped to each card ---------- */
+.glass-card,
+.pillar-card,
+.module-card,
+.case-card,
+.contact-info-card,
+.hero-glass-panel {
+  position: relative;
+  overflow: hidden;
+}
+.glass-card,
+.pillar-card,
+.module-card,
+.case-card,
+.contact-info-card {
+  z-index: 0;
+}
+.hero-glass-panel {
+  z-index: 2;
+}
+.glass-card::before,
+.pillar-card::before,
+.module-card::before,
+.case-card::before,
+.contact-info-card::before,
+.hero-glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(circle 260px at var(--mx, 50%) var(--my, 50%), hsla(var(--hue, 350), 90%, 60%, 0.35), transparent 70%);
+}
+.glass-card:hover::before,
+.pillar-card:hover::before,
+.module-card:hover::before,
+.case-card:hover::before,
+.contact-info-card:hover::before,
+.hero-glass-panel:hover::before {
+  opacity: 1;
+}
